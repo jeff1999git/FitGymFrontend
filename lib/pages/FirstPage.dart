@@ -17,7 +17,9 @@ class _FirstPageState extends State<FirstPage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            ElevatedButton(onPressed: onPressed, child: child)
+            ElevatedButton(onPressed: (){}, child: Text("User Login")),
+            ElevatedButton(onPressed: (){}, child: Text("Trainer Login")),
+            ElevatedButton(onPressed: (){}, child: Text("Admin Login"))
           ],
         )
       ),
