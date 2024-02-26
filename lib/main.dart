@@ -1,4 +1,4 @@
-import 'package:fitgym/mods/FirstPage.dart';
+import 'package:fitgym/pages/FirstPage.dart';
 import 'package:flutter/material.dart';
 
 void main()
