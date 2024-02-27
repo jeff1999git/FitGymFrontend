@@ -33,7 +33,6 @@ class _adminPageState extends State<adminPage> {
               controller: user,
               decoration: InputDecoration(
                 labelText: "Username",
-                hintText: "username",
                 border: OutlineInputBorder()
               ),
             ),
@@ -43,7 +42,6 @@ class _adminPageState extends State<adminPage> {
               obscureText: true,
               decoration: InputDecoration(
                 labelText: "Password",
-                hintText: "password",
                 border: OutlineInputBorder()
               ),
             ),
