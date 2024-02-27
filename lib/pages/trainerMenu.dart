@@ -1,4 +1,5 @@
 import 'package:fitgym/pages/addTrainer.dart';
+import 'package:fitgym/pages/viewTrainer.dart';
 import 'package:flutter/material.dart';
 
 class trainerMenuPage extends StatefulWidget {
@@ -40,7 +41,9 @@ class _trainerMenuPageState extends State<trainerMenuPage> {
                     borderRadius: BorderRadius.circular(20)
                 )
             ),
-                onPressed: (){}, child: Text("View Trainers")),
+                onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>viewTrainer()));
+                }, child: Text("View Trainers")),
           )
         ],
       ),

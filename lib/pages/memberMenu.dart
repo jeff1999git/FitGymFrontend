@@ -1,3 +1,4 @@
+import 'package:fitgym/pages/addMember.dart';
 import 'package:flutter/material.dart';
 
 class memberMenu extends StatefulWidget {
@@ -26,7 +27,9 @@ class _memberMenuState extends State<memberMenu> {
                       borderRadius: BorderRadius.circular(20)
                   )
               ),
-                  onPressed: (){}, child: Text("Add Member")),
+                  onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>addMember()));
+                  }, child: Text("Add Member")),
             ),
             SizedBox(height: 10,),
             SizedBox(height: 50,
@@ -65,7 +68,6 @@ class _memberMenuState extends State<memberMenu> {
                   ),
                   onPressed: (){}, child: Text("View Members")),
             ),
-            SizedBox(height: 10,),
           ],),
     );
   }
