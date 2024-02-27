@@ -12,9 +12,10 @@ class _FirstPageState extends State<FirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AppBar'),
+        title: const Text('FitGym'),
       ),
       drawer: Drawer(
+
         child: ListView(
           children: [
             ElevatedButton(onPressed: (){}, child: Text("User Login")),
@@ -23,7 +24,11 @@ class _FirstPageState extends State<FirstPage> {
           ],
         )
       ),
-      body: Container(),
+      body: Container(
+        child: ListView(
+          children: [],
+        ),
+      ),
     );
   }
 }
