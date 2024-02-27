@@ -1,5 +1,4 @@
-import 'package:fitgym/pages/addMember.dart';
-import 'package:fitgym/pages/addTrainer.dart';
+import 'package:fitgym/pages/memberMenu.dart';
 import 'package:fitgym/pages/trainerMenu.dart';
 import 'package:fitgym/pages/updatePackage.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +13,7 @@ class menuPage extends StatefulWidget {
 class _menuPageState extends State<menuPage> {
   final List<Widget>pages=[
     trainerMenuPage(),
-    addMember(),
+    memberMenu(),
     updatePackage()
   ];
   int currentIndex=0;
