@@ -12,14 +12,23 @@ class _FirstPageState extends State<FirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AppBar'),
+        title: const Text('FitGym'),
       ),
       drawer: Drawer(
-        child: ListView(
 
+        child: ListView(
+          children: [
+            ElevatedButton(onPressed: (){}, child: Text("User Login")),
+            ElevatedButton(onPressed: (){}, child: Text("Trainer Login")),
+            ElevatedButton(onPressed: (){}, child: Text("Admin Login"))
+          ],
         )
       ),
-      body: Container(),
+      body: Container(
+        child: ListView(
+          children: [],
+        ),
+      ),
     );
   }
 }
