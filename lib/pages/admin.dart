@@ -9,6 +9,9 @@ class adminPage extends StatefulWidget {
 }
 
 class _adminPageState extends State<adminPage> {
+  String getUser="",getPass="";
+  TextEditingController user=new TextEditingController();
+  TextEditingController pass=new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,6 +30,7 @@ class _adminPageState extends State<adminPage> {
           padding: EdgeInsets.all(20),
           children: [
             TextField(
+              controller: user,
               decoration: InputDecoration(
                 labelText: "Username",
                 hintText: "username",
@@ -35,6 +39,7 @@ class _adminPageState extends State<adminPage> {
             ),
             SizedBox(height: 10,),
             TextField(
+              controller: pass,
               obscureText: true,
               decoration: InputDecoration(
                 labelText: "Password",
@@ -51,7 +56,9 @@ class _adminPageState extends State<adminPage> {
               )
             ),
                 onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>menuPage()));
+              if(user.text=="gymadmin" && pass.text=="fitgym"){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>menuPage()));
+              }
                 }, child: Text("Login"))
           ],
         ),

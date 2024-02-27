@@ -1,5 +1,6 @@
 import 'package:fitgym/pages/addMember.dart';
 import 'package:fitgym/pages/addTrainer.dart';
+import 'package:fitgym/pages/updatePackage.dart';
 import 'package:flutter/material.dart';
 
 class menuPage extends StatefulWidget {
@@ -12,7 +13,8 @@ class menuPage extends StatefulWidget {
 class _menuPageState extends State<menuPage> {
   final List<Widget>pages=[
     addTrainer(),
-    addMember()
+    addMember(),
+    updatePackage()
   ];
   int currentIndex=0;
   @override
@@ -20,7 +22,10 @@ class _menuPageState extends State<menuPage> {
     return MaterialApp(
       home: Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: (){
+        leading: IconButton(style: IconButton.styleFrom(
+          foregroundColor: Colors.white
+        ),
+            onPressed: (){
           Navigator.pop(context);
         }, icon: Icon(Icons.arrow_back)),
         backgroundColor: Colors.blue,

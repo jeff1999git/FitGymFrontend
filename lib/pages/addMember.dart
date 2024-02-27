@@ -10,12 +10,11 @@ class addMember extends StatefulWidget {
 class _addMemberState extends State<addMember> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(),
-        body: Container(
-          padding: EdgeInsets.all(),
+    return Container(
+          padding: EdgeInsets.all(20),
+          width: double.infinity,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 50,
                 width: 200,
@@ -69,8 +68,6 @@ class _addMemberState extends State<addMember> {
 
             ],
           ),
-        ),
-      ),
     );
   }
 }
