@@ -1,4 +1,5 @@
 
+import 'package:fitgym/pages/Package/addPackage.dart';
 import 'package:fitgym/pages/admin.dart';
 import 'package:fitgym/pages/userlogin.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class _FirstPageState extends State<FirstPage> {
             }, child: Text("User Login")),
             ElevatedButton(onPressed: (){}, child: Text("Trainer Login")),
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>adminPage()));
+              //Navigator.push(context, MaterialPageRoute(builder: (context)=>AddPackage()));
             }, child: Text("Admin Login"))
           ],
         )

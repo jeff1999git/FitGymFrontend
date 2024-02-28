@@ -1,3 +1,5 @@
+import 'package:fitgym/pages/Package/addPackage.dart';
+import 'package:fitgym/pages/Package/changePackage.dart';
 import 'package:flutter/material.dart';
 
 class updatePackage extends StatefulWidget {
@@ -25,7 +27,9 @@ class _updatePackageState extends State<updatePackage> {
                       borderRadius: BorderRadius.circular(20)
                   )
               ),
-                  onPressed: (){}, child: Text("Add Package")),
+                  onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AddPackage()));
+                  }, child: Text("Add Package")),
             ),
             SizedBox(height: 10,),
             SizedBox(height: 50,
@@ -37,7 +41,9 @@ class _updatePackageState extends State<updatePackage> {
                       borderRadius: BorderRadius.circular(20)
                   )
               ),
-                  onPressed: (){}, child: Text("Update Package")),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ChangePackage()));
+                  }, child: Text("Update Package")),
             ),
             SizedBox(height: 10,),
           ],

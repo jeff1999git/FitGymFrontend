@@ -1,7 +1,7 @@
 import 'package:fitgym/pages/memberMenu.dart';
 import 'package:fitgym/pages/trainerMenu.dart';
-import 'package:fitgym/pages/updatePackage.dart';
 import 'package:flutter/material.dart';
+import 'Package/updatePackage.dart';
 
 class menuPage extends StatefulWidget {
   const menuPage({super.key});
