@@ -28,6 +28,7 @@ class Trainer {
     password: json["password"],
   );
 
+
   Map<String, dynamic> toJson() => {
     "name": name,
     "age": age,

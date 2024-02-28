@@ -1,5 +1,4 @@
 import 'package:fitgym/pages/TrainerPage.dart';
-import 'package:fitgym/services/TrainerService.dart';
 import 'package:flutter/material.dart';
 
 class TrainerLogin extends StatefulWidget {
@@ -10,17 +9,7 @@ class TrainerLogin extends StatefulWidget {
 }
 
 class _TrainerLoginState extends State<TrainerLogin> {
-  String username1="";
-  String password1="";
-  TextEditingController username=new TextEditingController();
-  TextEditingController password=new TextEditingController();
-  @override
-  void login() async
-   {
-     username1=username.text;
-     password1=password.text;
-     final response=await TrainerApiService().
-   }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
