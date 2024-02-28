@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class viewTrainer extends StatefulWidget {
-  const viewTrainer({super.key});
+class viewMember extends StatefulWidget {
+  const viewMember({super.key});
 
   @override
-  State<viewTrainer> createState() => _viewTrainerState();
+  State<viewMember> createState() => _viewMemberState();
 }
 
-class _viewTrainerState extends State<viewTrainer> {
+class _viewMemberState extends State<viewMember> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,12 +15,12 @@ class _viewTrainerState extends State<viewTrainer> {
         appBar: AppBar(
           backgroundColor: Colors.blue,
           leading: IconButton(style: IconButton.styleFrom(
-            foregroundColor: Colors.white
+              foregroundColor: Colors.white
           ),
               onPressed: (){
-            Navigator.pop(context);
+                Navigator.pop(context);
               }, icon: Icon(Icons.arrow_back)),
-          title: Text("Trainers",style: TextStyle(color: Colors.white),),
+          title: Text("Members",style: TextStyle(color: Colors.white),),
         ),
       ),
     );

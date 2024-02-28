@@ -1,5 +1,7 @@
 import 'package:fitgym/pages/addMember.dart';
+import 'package:fitgym/pages/deleteMember.dart';
 import 'package:fitgym/pages/searchMember.dart';
+import 'package:fitgym/pages/viewMember.dart';
 import 'package:flutter/material.dart';
 
 class memberMenu extends StatefulWidget {
@@ -56,7 +58,9 @@ class _memberMenuState extends State<memberMenu> {
                       borderRadius: BorderRadius.circular(20)
                   )
               ),
-                  onPressed: (){}, child: Text("Delete Member")),
+                  onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>deleteMember()));
+                  }, child: Text("Delete Member")),
             ),
             SizedBox(height: 10,),
             SizedBox(height: 50,
@@ -69,7 +73,9 @@ class _memberMenuState extends State<memberMenu> {
                           borderRadius: BorderRadius.circular(20)
                       )
                   ),
-                  onPressed: (){}, child: Text("View Members")),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>viewMember()));
+                  }, child: Text("View Members")),
             ),
           ],),
     );
