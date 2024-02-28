@@ -31,7 +31,7 @@ class _memberMenuState extends State<memberMenu> {
                   )
               ),
                   onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>addMember()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AddMember()));
                   }, child: Text("Add Member")),
             ),
             SizedBox(height: 10,),
