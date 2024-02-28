@@ -36,11 +36,13 @@ class _TrainerLoginState extends State<TrainerLogin> {
                 ),
                 SizedBox(height: 30,),
                 TextField(
+                  controller: username,
                   decoration: InputDecoration(labelText: "ENTER USERNAME",hintText:"USERNAME",
                   border: OutlineInputBorder()),
                 ),
                 SizedBox(height: 30,),
                 TextField(
+                  controller: password,
                   decoration: InputDecoration(labelText: "ENTER PASSWORD",hintText:"PASSWORD",
                       border: OutlineInputBorder()),
                 ),
