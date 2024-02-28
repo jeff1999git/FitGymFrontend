@@ -27,7 +27,7 @@ class _searchMemberState extends State<searchMember> {
           children: [
             TextField(
               decoration: InputDecoration(
-                  labelText: "Name",
+                  labelText: "Email",
                   border: OutlineInputBorder()
               ),
             ),
