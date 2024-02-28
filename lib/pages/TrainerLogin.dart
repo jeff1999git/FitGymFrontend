@@ -19,7 +19,17 @@ class _TrainerLoginState extends State<TrainerLogin> {
   {
     username1=username.text;
     password1=password.text;
-    final response=await TrainerApiService().
+    final response=await TrainerApiService().signInData(username1, password1);
+    if(response["status"]=="success"){
+      print("Successfully Login");
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>TrainerPage()));
+    }
+    else if(response["status"]=="Incorrect email id"){
+      print("Invalid Email id");
+    }
+    else{
+      print("Invalid Password");
+    }
   }
   @override
 
@@ -38,11 +48,13 @@ class _TrainerLoginState extends State<TrainerLogin> {
                 ),
                 SizedBox(height: 30,),
                 TextField(
+                  controller: username,
                   decoration: InputDecoration(labelText: "ENTER USERNAME",hintText:"USERNAME",
                   border: OutlineInputBorder()),
                 ),
                 SizedBox(height: 30,),
                 TextField(
+                  controller: password,
                   decoration: InputDecoration(labelText: "ENTER PASSWORD",hintText:"PASSWORD",
                       border: OutlineInputBorder()),
                 ),
@@ -55,9 +67,7 @@ class _TrainerLoginState extends State<TrainerLogin> {
                       borderRadius: BorderRadius.circular(4)
                     )
                   ),
-                    onPressed:(){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>TrainerPage()));
-                    }, child: Text("LOGIN")))
+                    onPressed: login, child: Text("LOGIN")))
               ],
             ),
           ),
