@@ -8,7 +8,7 @@ class MemberLogin extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("MEMBER LOGIN",style: TextStyle(color: Colors.black),),
+          title: Text("USER LOGIN",style: TextStyle(color: Colors.black),),
         ),
         body: Container(
           width: double.infinity,
