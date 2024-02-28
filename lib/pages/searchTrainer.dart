@@ -27,7 +27,7 @@ class _searchTrainerState extends State<searchTrainer> {
           children: [
             TextField(
               decoration: InputDecoration(
-                  labelText: "Name",
+                  labelText: "Email",
                   border: OutlineInputBorder()
               ),
             ),
