@@ -29,11 +29,11 @@ class _FirstPageState extends State<FirstPage> {
               (context)=>UserLogin()));
             }, child: Text("User Login")),
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>AddMember()));
-            }, child: Text("Trainer Login/addmember")),
+              //Navigator.push(context, MaterialPageRoute(builder: (context)=>AddMember()));
+            }, child: Text("Trainer Login")),
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>AddPackage()));
-            }, child: Text("Admin Login/AddPackage"))
+             // Navigator.push(context, MaterialPageRoute(builder: (context)=>AddPackage()));
+            }, child: Text("Admin Login"))
           ],
         )
       ),
