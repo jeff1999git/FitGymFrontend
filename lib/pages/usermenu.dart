@@ -22,10 +22,11 @@ class _MemPageState extends State<MemPage> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           leading: IconButton(onPressed: (){
             Navigator.pop(context);
           },
-              icon: Icon(Icons.arrow_back_ios)),
+              icon: Icon(Icons.arrow_back_ios),color: Colors.white,),
         ),
 
         body: pages[currentIndex],
@@ -38,10 +39,15 @@ class _MemPageState extends State<MemPage> {
             });
           },
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.person),label: "Profile"),
-            BottomNavigationBarItem(icon: Icon(Icons.shopping_bag_rounded),label: "Package"),
-            BottomNavigationBarItem(icon: Icon(Icons.payments_outlined),label: "Payment history"),
-
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: "Profile"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_bag_rounded),
+                label: "Package"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.payments_outlined),
+                label: "Payment history")
           ],
         ),
       ),
