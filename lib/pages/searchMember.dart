@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class searchTrainer extends StatefulWidget {
-  const searchTrainer({super.key});
+class searchMember extends StatefulWidget {
+  const searchMember({super.key});
 
   @override
-  State<searchTrainer> createState() => _searchTrainerState();
+  State<searchMember> createState() => _searchMemberState();
 }
 
-class _searchTrainerState extends State<searchTrainer> {
+class _searchMemberState extends State<searchMember> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +20,7 @@ class _searchTrainerState extends State<searchTrainer> {
                 Navigator.pop(context);
               }, icon: Icon(Icons.arrow_back)),
           backgroundColor: Colors.blue,
-          title: Text("Search Trainer",style: TextStyle(color: Colors.white),),
+          title: Text("Search Member",style: TextStyle(color: Colors.white),),
         ),
         body: ListView(
           padding: EdgeInsets.all(20),
@@ -33,16 +33,16 @@ class _searchTrainerState extends State<searchTrainer> {
             ),
             SizedBox(height: 10,),
             SizedBox(height: 50,
-              width: 200,
-              child: ElevatedButton(style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)
-                  )
-              ),
-                  onPressed: (){
-                  }, child: Text("Search"))
+                width: 200,
+                child: ElevatedButton(style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)
+                    )
+                ),
+                    onPressed: (){
+                    }, child: Text("Search"))
             ),
           ],
         ),

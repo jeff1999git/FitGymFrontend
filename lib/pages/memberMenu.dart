@@ -1,4 +1,5 @@
 import 'package:fitgym/pages/addMember.dart';
+import 'package:fitgym/pages/searchMember.dart';
 import 'package:flutter/material.dart';
 
 class memberMenu extends StatefulWidget {
@@ -41,7 +42,9 @@ class _memberMenuState extends State<memberMenu> {
                       borderRadius: BorderRadius.circular(20)
                   )
               ),
-                  onPressed: (){}, child: Text("Search Member")),
+                  onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>searchMember()));
+                  }, child: Text("Search Member")),
             ),
             SizedBox(height: 10,),
             SizedBox(height: 50,
