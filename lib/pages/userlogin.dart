@@ -1,10 +1,48 @@
 import 'package:fitgym/pages/userMenu.dart';
+import 'package:fitgym/services/userService.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class MemberLogin extends StatelessWidget {
+class MemberLogin extends StatefulWidget {
   const MemberLogin({super.key});
 
   @override
+  State<MemberLogin> createState() => _MemberLoginState();
+}
+
+class _MemberLoginState extends State<MemberLogin> {
+  final TextEditingController username=new TextEditingController();
+  final TextEditingController password=new TextEditingController();
+
+  @override
+  void checkCredentials() async
+  {
+    final response=await UserServiceApi().signInData(username.text, password.text);
+    if(response["status"]=="success")
+      {
+        String userName=response["userdata"]["name"].toString();
+        SharedPreferences prefer=await SharedPreferences.getInstance();
+        prefer.setString("name", userName);
+        print("Successful Login");
+        Navigator.push(context, MaterialPageRoute(
+            builder: (context)=>MemPage()
+        ));
+      }
+    else if(response["status"]=="incorrect email id")
+    {
+      print("Incorrect Email_ID");
+
+    }
+    else if(response["status"]=="incorrect password")
+      {
+        print("Incorrect password");
+      }
+    else
+      {
+        print("Invalid");
+      }
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -26,6 +64,7 @@ class MemberLogin extends StatelessWidget {
           child: Column(
             children: [
               TextField(
+                controller: username,
                 decoration: InputDecoration(
                   labelText: "Email Id",
                   hintText: "Email Id",
@@ -36,6 +75,7 @@ class MemberLogin extends StatelessWidget {
               ),
               SizedBox(height: 10,),
               TextField(
+                controller: password,
                 decoration: InputDecoration(
                   labelText: "Password",
                   hintText: "Password",
@@ -45,11 +85,7 @@ class MemberLogin extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10,),
-              ElevatedButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=>MemPage()
-                ));
-              }, child: Text("LOGIN"))
+              ElevatedButton(onPressed: checkCredentials, child: Text("LOGIN"))
             ],
           ),
         ),

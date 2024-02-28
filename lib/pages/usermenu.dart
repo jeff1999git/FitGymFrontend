@@ -32,7 +32,6 @@ class _MemPageState extends State<MemPage> {
         body: pages[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           onTap: (index){
-
             print(index);
             setState(() {
               currentIndex=index;
