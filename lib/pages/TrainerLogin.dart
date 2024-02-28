@@ -10,33 +10,17 @@ class TrainerLogin extends StatefulWidget {
 }
 
 class _TrainerLoginState extends State<TrainerLogin> {
+  String username1="";
+  String password1="";
   TextEditingController username=new TextEditingController();
   TextEditingController password=new TextEditingController();
   @override
-  void signin() async
-  {
-    final response=await Trainer().TrainerLogin(
-      username.text,
-      password.text);
-        if(response["status"]=="success")
-          {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>TrainerPage()));
-            // String userid=response["userdata"]["_id"].toString();
-            // Sha.setMockInitialValues({});
-            // SharedPreferences preferences=await SharedPreferences.getInstance();
-            // preferences.setString("userId", userid);
-            // print("successfull login"+userid);
-
-          }
-        else if(response["status"]=="no user")
-          {
-
-          }
-        else {
-
-        }
-
-  }
+  void login() async
+   {
+     username1=username.text;
+     password1=password.text;
+     final response=await TrainerApiService().
+   }
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
