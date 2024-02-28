@@ -1,4 +1,5 @@
 import 'package:fitgym/pages/addTrainer.dart';
+import 'package:fitgym/pages/searchTrainer.dart';
 import 'package:fitgym/pages/viewTrainer.dart';
 import 'package:flutter/material.dart';
 
@@ -44,6 +45,20 @@ class _trainerMenuPageState extends State<trainerMenuPage> {
                 onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>viewTrainer()));
                 }, child: Text("View Trainers")),
+          ),
+          SizedBox(height: 10,),
+          SizedBox(height: 50,
+            width: 200,
+            child: ElevatedButton(style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)
+                )
+            ),
+                onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>searchTrainer()));
+                }, child: Text("Search Trainer")),
           )
         ],
       ),
