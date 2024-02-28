@@ -26,7 +26,7 @@ class _FirstPageState extends State<FirstPage> {
           children: [
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder:
-              (context)=>UserLogin()));
+              (context)=>MemberLogin()));
             }, child: Text("User Login")),
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>TrainerLogin()));
