@@ -1,3 +1,4 @@
+import 'package:fitgym/pages/userMenu.dart';
 import 'package:flutter/material.dart';
 class MemberLogin extends StatelessWidget {
   const MemberLogin({super.key});
@@ -43,7 +44,11 @@ class MemberLogin extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10,),
-              ElevatedButton(onPressed: (){}, child: Text("LOGIN"))
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context)=>MemPage()
+                ));
+              }, child: Text("LOGIN"))
             ],
           ),
         ),
