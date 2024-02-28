@@ -1,4 +1,5 @@
 import 'package:fitgym/pages/TrainerPage.dart';
+import 'package:fitgym/services/TrainerService.dart';
 import 'package:flutter/material.dart';
 
 class TrainerLogin extends StatefulWidget {
@@ -14,17 +15,17 @@ class _TrainerLoginState extends State<TrainerLogin> {
   @override
   void signin() async
   {
-    final response=await users().loginapi(
+    final response=await Trainer().TrainerLogin(
       username.text,
       password.text);
         if(response["status"]=="success")
           {
             Navigator.push(context, MaterialPageRoute(builder: (context)=>TrainerPage()));
-            String userid=response["userdata"]["_id"].toString();
-            SharedPreferences.setMockInitialValues({});
-            SharedPreferences preferences=await SharedPreferences.getInstance();
-            preferences.setString("userId", userid);
-            print("successfull login"+userid);
+            // String userid=response["userdata"]["_id"].toString();
+            // Sha.setMockInitialValues({});
+            // SharedPreferences preferences=await SharedPreferences.getInstance();
+            // preferences.setString("userId", userid);
+            // print("successfull login"+userid);
 
           }
         else if(response["status"]=="no user")
@@ -68,7 +69,7 @@ class _TrainerLoginState extends State<TrainerLogin> {
                       borderRadius: BorderRadius.circular(4)
                     )
                   ),
-                    onPressed: (){
+                    onPressed:(){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>TrainerPage()));
                     }, child: Text("LOGIN")))
               ],
