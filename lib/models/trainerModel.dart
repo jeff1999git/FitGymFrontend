@@ -1,30 +1,27 @@
 // To parse this JSON data, do
 //
-//     final welcome = welcomeFromJson(jsonString);
+//     final trainer = trainerFromJson(jsonString);
 
 import 'dart:convert';
 
-List<Welcome> welcomeFromJson(String str) => List<Welcome>.from(json.decode(str).map((x) => Welcome.fromJson(x)));
+List<Trainer> trainerFromJson(String str) => List<Trainer>.from(json.decode(str).map((x) => Trainer.fromJson(x)));
 
-String welcomeToJson(List<Welcome> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String trainerToJson(List<Trainer> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Welcome {
-  String id;
+class Trainer {
   String name;
   String age;
   String emailid;
   String password;
 
-  Welcome({
-    required this.id,
+  Trainer({
     required this.name,
     required this.age,
     required this.emailid,
     required this.password,
   });
 
-  factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
-    id: json["_id"],
+  factory Trainer.fromJson(Map<String, dynamic> json) => Trainer(
     name: json["name"],
     age: json["age"],
     emailid: json["emailid"],
@@ -32,7 +29,6 @@ class Welcome {
   );
 
   Map<String, dynamic> toJson() => {
-    "_id": id,
     "name": name,
     "age": age,
     "emailid": emailid,

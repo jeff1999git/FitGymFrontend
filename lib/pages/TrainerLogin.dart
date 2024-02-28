@@ -1,5 +1,5 @@
 import 'package:fitgym/pages/TrainerPage.dart';
-import 'package:fitgym/services/TrainerService.dart';
+import 'package:fitgym/services/trainerService.dart';
 import 'package:flutter/material.dart';
 
 class TrainerLogin extends StatefulWidget {
