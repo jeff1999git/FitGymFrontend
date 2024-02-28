@@ -1,4 +1,6 @@
 import 'package:fitgym/pages/TrainerLogin.dart';
+import 'package:fitgym/pages/admin.dart';
+import 'package:fitgym/pages/userlogin.dart';
 import 'package:flutter/material.dart';
 
 class FirstPage extends StatefulWidget {
@@ -19,11 +21,16 @@ class _FirstPageState extends State<FirstPage> {
 
         child: ListView(
           children: [
-            ElevatedButton(onPressed: (){}, child: Text("User Login")),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder:
+              (context)=>UserLogin()));
+            }, child: Text("User Login")),
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>TrainerLogin()));
             }, child: Text("Trainer Login")),
-            ElevatedButton(onPressed: (){}, child: Text("Admin Login"))
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>adminPage()));
+            }, child: Text("Admin Login"))
           ],
         )
       ),
