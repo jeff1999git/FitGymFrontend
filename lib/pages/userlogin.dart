@@ -1,13 +1,15 @@
+import 'package:fitgym/pages/userMenu.dart';
 import 'package:flutter/material.dart';
-class MemberLogin extends StatelessWidget {
-  const MemberLogin({super.key});
+
+class UserLogin extends StatelessWidget {
+  const UserLogin({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("MEMBER LOGIN",style: TextStyle(color: Colors.black),),
+          title: Text("USER LOGIN",style: TextStyle(color: Colors.black),),
         ),
         body: Container(
           width: double.infinity,
@@ -43,7 +45,10 @@ class MemberLogin extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10,),
-              ElevatedButton(onPressed: (){}, child: Text("LOGIN"))
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context)=>MemPage()));
+              }, child: Text("LOGIN"))
             ],
           ),
         ),

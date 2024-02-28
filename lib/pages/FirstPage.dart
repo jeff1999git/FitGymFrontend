@@ -1,6 +1,6 @@
 
 import 'package:fitgym/pages/admin.dart';
-import 'package:fitgym/pages/memberlogin.dart';
+import 'package:fitgym/pages/userlogin.dart';
 import 'package:flutter/material.dart';
 
 class FirstPage extends StatefulWidget {
@@ -23,7 +23,7 @@ class _FirstPageState extends State<FirstPage> {
           children: [
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder:
-              (context)=>MemberLogin()));
+              (context)=>UserLogin()));
             }, child: Text("User Login")),
             ElevatedButton(onPressed: (){}, child: Text("Trainer Login")),
             ElevatedButton(onPressed: (){
