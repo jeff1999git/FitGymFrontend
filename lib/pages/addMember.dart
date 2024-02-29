@@ -151,30 +151,33 @@ class _AddMemberState extends State<AddMember> {
             ),
             SizedBox(height: 10),
             Text('Select Package:'),
-            Container(
-              width: double.infinity, // Set the width to occupy the available space
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(4),
-              ),
-              child: DropdownButton(
-                value: packageId,
-                items: packages.map<DropdownMenuItem<String>>((dynamic package) {
-                  return DropdownMenuItem(
-                    value: package['_id'],
-                    child: Column(
-                        children: [
-                          Text('Package Name : ${package['packageName']} \n Package Amount: ${package['packageAmount']}'),
-                        ],
-                    ),
-                  );
-                }).toList(),
-                onChanged: (selectedPackageId) {
-                  setState(() {
-                    packageId = selectedPackageId as String; // Update the packageId
-                  });
-                },
+            SingleChildScrollView(
+              child: Container(
+                constraints: BoxConstraints(maxHeight: 200),
+                width: double.infinity, // Set the width to occupy the available space
+                //padding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: DropdownButton(
+                  value: packageId,
+                  items: packages.map<DropdownMenuItem<String>>((dynamic package) {
+                    return DropdownMenuItem(
+                      value: package['_id'],
+                      child: Column(
+                          children: [
+                            Text('Package Name : ${package['packageName']} \n Package Amount: ${package['packageAmount']}'),
+                          ],
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (selectedPackageId) {
+                    setState(() {
+                      packageId = selectedPackageId as String; // Update the packageId
+                    });
+                  },
+                ),
               ),
             ),
             SizedBox(height: 10,),
