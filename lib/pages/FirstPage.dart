@@ -2,6 +2,7 @@
 import 'package:fitgym/pages/Package/addPackage.dart';
 import 'package:fitgym/pages/admin.dart';
 import 'package:fitgym/pages/userlogin.dart';
+import 'package:fitgym/pages/viewMember.dart';
 import 'package:flutter/material.dart';
 
 import 'Package/changePackage.dart';
@@ -32,7 +33,7 @@ class _FirstPageState extends State<FirstPage> {
               //Navigator.push(context, MaterialPageRoute(builder: (context)=>AddMember()));
             }, child: Text("Trainer Login")),
             ElevatedButton(onPressed: (){
-             //Navigator.push(context, MaterialPageRoute(builder: (context)=>AddPackage()));
+             //Navigator.push(context, MaterialPageRoute(builder: (context)=>viewMember()));
             }, child: Text("Admin Login"))
           ],
         )

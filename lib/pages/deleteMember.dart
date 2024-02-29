@@ -11,6 +11,7 @@ class _deleteMemberState extends State<deleteMember> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(style: IconButton.styleFrom(
