@@ -1,5 +1,6 @@
 import 'package:fitgym/pages/adminMenu.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class adminPage extends StatefulWidget {
   const adminPage({super.key});
@@ -29,6 +30,7 @@ class _adminPageState extends State<adminPage> {
         ListView(
           padding: EdgeInsets.all(20),
           children: [
+            SvgPicture.asset("assets/login.svg",height: 200,width: 200,),
             TextField(
               controller: user,
               decoration: InputDecoration(
