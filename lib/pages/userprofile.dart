@@ -23,6 +23,7 @@ class _UserProfileState extends State<UserProfile> {
   Future<void> loadData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String userEmail = prefs.getString("email") ?? "";
+    print(userEmail);
     // Corrected assumption: UserServiceApi().searchData() returns a Future that resolves to a list of user data
     try {
       final response = await UserServiceApi().searchData(userEmail);

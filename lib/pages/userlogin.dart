@@ -25,7 +25,7 @@ class _MemberLoginState extends State<MemberLogin> {
         String userPassword=response["userdata"]["password"].toString();
         SharedPreferences prefer=await SharedPreferences.getInstance();
         prefer.setString("email", userEmail);
-        prefer.setString("email", userPassword);
+        //prefer.setString("email", userPassword);
         print("Successful Login");
         print(userEmail);
         Navigator.push(context, MaterialPageRoute(
