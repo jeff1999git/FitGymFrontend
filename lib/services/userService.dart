@@ -9,7 +9,7 @@ class UserServiceApi{
   {
     var client = http.Client();
     var apiUrl=Uri.parse("http://192.168.1.4:3001/api/member/viewmemberprofile");
-    var response=await client.get(apiUrl);
+    var response=await client.post(apiUrl);
     if(response.statusCode==200)
     {
       return usersFromJson(response.body);

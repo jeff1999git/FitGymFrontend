@@ -20,9 +20,10 @@ class _MemberLoginState extends State<MemberLogin> {
     final response=await UserServiceApi().signInData(username.text, password.text);
     if(response["status"]=="success")
       {
-        String userName=response["userdata"]["name"].toString();
+        SharedPreferences.setMockInitialValues({});
+        String userName=response["userdata"]["email"].toString();
         SharedPreferences prefer=await SharedPreferences.getInstance();
-        prefer.setString("name", userName);
+        prefer.setString("email", userName);
         print("Successful Login");
         Navigator.push(context, MaterialPageRoute(
             builder: (context)=>MemPage()

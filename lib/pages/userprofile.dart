@@ -22,8 +22,13 @@ class _UserProfileState extends State<UserProfile> {
     // TODO: implement initState
     super.initState();
     data=UserServiceApi().getProfile();
-    SharedPreferences prefered=SharedPreferences.getInstance();
-    String userName=prefered.getString("name")??"";
+
+  }
+
+  void loadData() async
+  {
+    SharedPreferences prefered=await SharedPreferences.getInstance();
+    String userName=  prefered.getString("email")??"";
   }
   Widget build(BuildContext context) {
     return Scaffold(
