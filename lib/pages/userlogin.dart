@@ -21,10 +21,13 @@ class _MemberLoginState extends State<MemberLogin> {
     if(response["status"]=="success")
       {
         SharedPreferences.setMockInitialValues({});
-        String userName=response["userdata"]["email"].toString();
+        String userEmail=response["userdata"]["email"].toString();
+        String userPassword=response["userdata"]["password"].toString();
         SharedPreferences prefer=await SharedPreferences.getInstance();
-        prefer.setString("email", userName);
+        prefer.setString("email", userEmail);
+        prefer.setString("email", userPassword);
         print("Successful Login");
+        print(userEmail);
         Navigator.push(context, MaterialPageRoute(
             builder: (context)=>MemPage()
         ));
