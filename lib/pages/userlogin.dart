@@ -46,6 +46,7 @@ class _MemberLoginState extends State<MemberLogin> {
 
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text("USER LOGIN",style: TextStyle(color: Colors.black),),

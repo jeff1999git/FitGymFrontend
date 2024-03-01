@@ -1,10 +1,14 @@
-
+import 'package:fitgym/pages/Package/addPackage.dart';
 import 'package:fitgym/pages/userlogin.dart';
 import 'package:fitgym/pages/admin.dart';
 import 'package:fitgym/pages/TrainerLogin.dart';
 import 'package:fitgym/pages/admin.dart';
 import 'package:fitgym/pages/userlogin.dart';
+import 'package:fitgym/pages/viewMember.dart';
 import 'package:flutter/material.dart';
+
+import 'Package/changePackage.dart';
+import 'addMember.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({super.key});
@@ -25,14 +29,13 @@ class _FirstPageState extends State<FirstPage> {
         child: ListView(
           children: [
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder:
-              (context)=>MemberLogin()));
+              Navigator.push(context, MaterialPageRoute(builder:(context)=>ChangePackage()));
             }, child: Text("User Login")),
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>TrainerLogin()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>AddMember()));
             }, child: Text("Trainer Login")),
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>adminPage()));
+             Navigator.push(context, MaterialPageRoute(builder: (context)=>viewMember()));
             }, child: Text("Admin Login"))
           ],
         )

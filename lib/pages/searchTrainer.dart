@@ -26,6 +26,7 @@ class _searchTrainerState extends State<searchTrainer> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(style: IconButton.styleFrom(
