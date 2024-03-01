@@ -1,69 +1,67 @@
-// To parse this JSON data, do
-//
-//     final users = usersFromJson(jsonString);
-
 import 'dart:convert';
 
-List<Users> usersFromJson(String str) => List<Users>.from(json.decode(str).map((x) => Users.fromJson(x)));
+List<Member> membersFromJson(String str) =>
+    List<Member>.from(json.decode(str).map((x) => Member.fromJson(x)));
 
-String usersToJson(List<Users> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String membersToJson(List<Member> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Users {
+class Member {
   String name;
-  String place;
-  String age;
-  String height;
-  String weight;
-  String bloodGroup;
   String email;
-  String password;
-  String packageId;
-  int previousPackageAmount;
-  DateTime registerDate;
-  DateTime lastPackageUpdateDate;
+  String packageName;
+  Package packageDetails; // Include package details here
+  double dueAmount;
+  int remainingDaysForNextDue;
 
-  Users({
+  Member({
     required this.name,
-    required this.place,
-    required this.age,
-    required this.height,
-    required this.weight,
-    required this.bloodGroup,
     required this.email,
-    required this.password,
-    required this.packageId,
-    required this.previousPackageAmount,
-    required this.registerDate,
-    required this.lastPackageUpdateDate,
+    required this.packageName,
+    required this.packageDetails,
+    required this.dueAmount,
+    required this.remainingDaysForNextDue,
   });
 
-  factory Users.fromJson(Map<String, dynamic> json) => Users(
+  factory Member.fromJson(Map<String, dynamic> json) => Member(
     name: json["name"],
-    place: json["place"],
-    age: json["age"],
-    height: json["height"],
-    weight: json["weight"],
-    bloodGroup: json["bloodGroup"],
     email: json["email"],
-    password: json["password"],
-    packageId: json["packageId"],
-    previousPackageAmount: json["previousPackageAmount"],
-    registerDate: DateTime.parse(json["registerDate"]),
-    lastPackageUpdateDate: DateTime.parse(json["lastPackageUpdateDate"]),
+    packageName: json["package_name"],
+    packageDetails: Package.fromJson(json["package_details"]),
+    dueAmount: json["dueAmount"].toDouble(),
+    remainingDaysForNextDue: json["remainingDaysForNextDue"],
   );
 
   Map<String, dynamic> toJson() => {
     "name": name,
-    "place": place,
-    "age": age,
-    "height": height,
-    "weight": weight,
-    "bloodGroup": bloodGroup,
     "email": email,
-    "password": password,
-    "packageId": packageId,
-    "previousPackageAmount": previousPackageAmount,
-    "registerDate": registerDate.toIso8601String(),
-    "lastPackageUpdateDate": lastPackageUpdateDate.toIso8601String(),
+    "package_name": packageName,
+    "package_details": packageDetails.toJson(),
+    "dueAmount": dueAmount,
+    "remainingDaysForNextDue": remainingDaysForNextDue,
+  };
+}
+
+class Package {
+  String packageName;
+  String packageDes;
+  double packageAmount;
+
+  Package({
+    required this.packageName,
+    required this.packageDes,
+    required this.packageAmount,
+  });
+
+  factory Package.fromJson(Map<String, dynamic> json) => Package(
+    packageName: json["packageName"],
+    packageDes: json["packageDes"],
+    packageAmount: json["packageAmount"].toDouble(),
+  );
+
+  Map<String, dynamic> toJson() => {
+    "packageName": packageName,
+    "packageDes": packageDes,
+    "packageAmount": packageAmount,
   };
 }
