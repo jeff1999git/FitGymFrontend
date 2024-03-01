@@ -24,36 +24,59 @@ class TrainerApiService{
     }
   }
 
+  Future<dynamic> signInData(String email, String password) async {
 
-  Future<List<Trainer>> getTrainer()async{
     var client = http.Client();
-    var apiUrl =Uri.parse("http://localhost:3001/api/trainer/viewtrainers");
-    var response=await client.get(apiUrl);
-    if(response.statusCode==200){
+    var apiUrl = Uri.parse("http://localhost:3001/api/trainer/signintrainer");
+    var response = await client.post(apiUrl,
+        headers: <String, String>{
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        body: jsonEncode(<String, String>{
+          "email": email,
+          "password": password
+        })
+    );
+    if (response.statusCode == 200) {
+      return json.decode(response.body);
+    }
+    else {
+      throw Exception("Failed to login");
+    }
+  }
+
+
+  Future<List<Trainer>> getTrainer() async {
+    var client = http.Client();
+    var apiUrl = Uri.parse("http://localhost:3001/api/trainer/viewtrainers");
+    var response = await client.get(apiUrl);
+    if (response.statusCode == 200) {
       return trainerFromJson(response.body);
     }
-    else{
+    else {
       return [];
     }
   }
-  Future<dynamic>sendData(String name,String age,String emailid,String password)async{
-    var client=http.Client();
-    var apiUrl=Uri.parse("http://localhost:3001/api/trainer/addtrainer");
-    var response=await client.post(apiUrl,
-        headers: <String,String>{
-          "Content-Type":"application/json;charset=UTF-8"
+
+  Future<dynamic> sendData(String name, String age, String emailid,
+      String password) async {
+    var client = http.Client();
+    var apiUrl = Uri.parse("http://localhost:3001/api/trainer/addtrainer");
+    var response = await client.post(apiUrl,
+        headers: <String, String>{
+          "Content-Type": "application/json;charset=UTF-8"
         },
-        body: jsonEncode(<String,String>{
+        body: jsonEncode(<String, String>{
           "name": name,
           "age": age,
           "emailid": emailid,
           "password": password,
         })
     );
-    if(response.statusCode==200){
+    if (response.statusCode == 200) {
       return json.decode(response.body);
     }
-    else{
+    else {
       throw Exception("Failure to add");
     }
   }
