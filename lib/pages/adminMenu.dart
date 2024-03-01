@@ -40,12 +40,12 @@ class _menuPageState extends State<menuPage> {
             });
           },
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.add),
-            label: "Add Trainer"),
-            BottomNavigationBarItem(icon: Icon(Icons.add),
-            label: "Add Member"),
+            BottomNavigationBarItem(icon: Icon(Icons.person),
+            label: "Trainer"),
+            BottomNavigationBarItem(icon: Icon(Icons.person),
+            label: "Member"),
             BottomNavigationBarItem(icon: Icon(Icons.update),
-            label: "Update Package")
+            label: "Package")
           ],
         ),
     )

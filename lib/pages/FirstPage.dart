@@ -1,5 +1,7 @@
-
 import 'package:fitgym/pages/Package/addPackage.dart';
+import 'package:fitgym/pages/userlogin.dart';
+import 'package:fitgym/pages/admin.dart';
+import 'package:fitgym/pages/TrainerLogin.dart';
 import 'package:fitgym/pages/admin.dart';
 import 'package:fitgym/pages/userlogin.dart';
 import 'package:fitgym/pages/viewMember.dart';
@@ -27,13 +29,13 @@ class _FirstPageState extends State<FirstPage> {
         child: ListView(
           children: [
             ElevatedButton(onPressed: (){
-              //Navigator.push(context, MaterialPageRoute(builder:(context)=>ChangePackage()));
+              Navigator.push(context, MaterialPageRoute(builder:(context)=>ChangePackage()));
             }, child: Text("User Login")),
             ElevatedButton(onPressed: (){
-              //Navigator.push(context, MaterialPageRoute(builder: (context)=>AddMember()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>AddMember()));
             }, child: Text("Trainer Login")),
             ElevatedButton(onPressed: (){
-             //Navigator.push(context, MaterialPageRoute(builder: (context)=>viewMember()));
+             Navigator.push(context, MaterialPageRoute(builder: (context)=>viewMember()));
             }, child: Text("Admin Login"))
           ],
         )

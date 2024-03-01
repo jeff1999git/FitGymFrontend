@@ -4,15 +4,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fitgym/services/userService.dart';
 // Assuming UserServiceApi is correctly implemented elsewhere
 
-class UserProfile extends StatefulWidget {
-  const UserProfile({Key? key}) : super(key: key);
+class UserProfile1 extends StatefulWidget {
+  const UserProfile1({Key? key}) : super(key: key);
 
   @override
-  State<UserProfile> createState() => _UserProfileState();
+  State<UserProfile1> createState() => _UserProfile1State();
 }
 
-class _UserProfileState extends State<UserProfile> {
+class _UserProfile1State extends State<UserProfile1> {
   List<Map<String, dynamic>> searchResult = [];
+  String? userId;
 
   @override
   void initState() {
@@ -22,20 +23,28 @@ class _UserProfileState extends State<UserProfile> {
 
   Future<void> loadData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String userEmail = prefs.getString("email") ?? "";
+    String? userEmail = prefs.getString("email");
     print(userEmail);
-    // Corrected assumption: UserServiceApi().searchData() returns a Future that resolves to a list of user data
+
+    // Retrieve user ID using the email
     try {
-      final response = await UserServiceApi().searchData(userEmail);
-      if (response != null && mounted) {
+      final response = await UserServiceApi().searchData(userEmail!);
+      if (response != null) {
         setState(() {
-          searchResult = List<Map<String, dynamic>>.from(response);
+          userId = response;
+          print(userId);// Set the userId obtained from the email
         });
+        // Now perform the search using the retrieved userId
+        final userData = await UserServiceApi().searchData(userId!);
+        if (userData != null && mounted) {
+          setState(() {
+            searchResult = List<Map<String, dynamic>>.from(userData);
+          });
+        }
       }
     } catch (e) {
-      // Handling exceptions that might be thrown by UserServiceApi().searchData()
       print("Error fetching user data: $e");
-      // Optionally, show an error message to the user
+      // Handle error
     }
   }
 

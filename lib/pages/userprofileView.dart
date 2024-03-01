@@ -1,27 +1,28 @@
 import 'package:fitgym/models/trainerModel.dart';
+import 'package:fitgym/models/userModel.dart';
 import 'package:fitgym/services/trainerService.dart';
+import 'package:fitgym/services/userService.dart';
 import 'package:flutter/material.dart';
 
-class viewTrainer extends StatefulWidget {
-  const viewTrainer({super.key});
+class Uprofileview extends StatefulWidget {
+  const Uprofileview({super.key});
 
   @override
-  State<viewTrainer> createState() => _viewTrainerState();
+  State<Uprofileview> createState() => _UprofileviewState();
 }
 
-class _viewTrainerState extends State<viewTrainer> {
-  Future<List<Trainer>>? data;
+class _UprofileviewState extends State<Uprofileview> {
+  Future<List<Users>>? data;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    data=TrainerApiService().getTrainer();
+    data=UserServiceApi().getProfile();
   }
 
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
@@ -31,10 +32,9 @@ class _viewTrainerState extends State<viewTrainer> {
               onPressed: (){
                 Navigator.pop(context);
               }, icon: Icon(Icons.arrow_back)),
-          title: Text("Trainers",style: TextStyle(color: Colors.white),),
+          title: Text("Profile",style: TextStyle(color: Colors.white),),
         ),
-        body:
-        FutureBuilder(future: data, builder: (context,snapshot){
+        body: FutureBuilder(future: data, builder: (context,snapshot){
           if(snapshot.hasData && snapshot.data!.isNotEmpty){
             return ListView.builder(
                 itemCount: snapshot.data!.length,
@@ -50,8 +50,12 @@ class _viewTrainerState extends State<viewTrainer> {
                           ),
                           title: Text("Name : "+snapshot.data![index].name.toString()),
                           subtitle: Text("Age : "+snapshot.data![index].age.toString()+
-                              "\nEmail : "+snapshot.data![index].emailid.toString()),
-                        ),
+                  "\nPlace : "+snapshot.data![index].place.toString()+
+                  "\nWeight : "+snapshot.data![index].weight.toString()+"\nBloodGroup : "+snapshot.data![index].bloodGroup.toString()+
+                              "\nEmail : "+snapshot.data![index].email.toString()+
+                              "\nRegister Date : "+snapshot.data![index].registerDate.toString()+
+                              "\nHeight : "+snapshot.data![index].height.toString()),
+                        )
                       ],
                     ),
                   );
