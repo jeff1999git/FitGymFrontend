@@ -3,9 +3,29 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:fitgym/models/trainerModel.dart';
 
-class TrainerApiService {
+class TrainerApiService{
+
+  Future<dynamic>searchTrainer(String emailid)async{
+    var client=http.Client();
+    var apiUrl=Uri.parse("http://localhost:3001/api/trainer/searchtrainer");
+    var response=await client.post(apiUrl,
+        headers: <String,String>{
+          "Content-Type":"application/json;charset=UTF-8"
+        },
+        body: jsonEncode(<String,String>{
+          "emailid":emailid,
+        })
+    );
+    if(response.statusCode==200){
+      return json.decode(response.body);
+    }
+    else{
+      throw Exception("Failed to search");
+    }
+  }
 
   Future<dynamic> signInData(String email, String password) async {
+
     var client = http.Client();
     var apiUrl = Uri.parse("http://localhost:3001/api/trainer/signintrainer");
     var response = await client.post(apiUrl,
