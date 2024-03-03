@@ -43,6 +43,25 @@ class UserServiceApi {
     }
   }
 
+  Future<dynamic> deleteData(String id) async {
+    var client = http.Client();
+    var apiUrl = Uri.parse("http://localhost:3001/api/member/deletemember");
+    var response = await client.post(apiUrl,
+        headers: <String, String>{
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        body: jsonEncode(<String, String>{
+          "_id": id
+        })
+    );
+    if (response.statusCode == 200) {
+      return json.decode(response.body);
+    }
+    else {
+      throw Exception("Failed");
+    }
+  }
+
 
   Future<dynamic> searchData(String email) async
   {
