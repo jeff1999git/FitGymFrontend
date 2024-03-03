@@ -6,7 +6,7 @@ class UserServiceApi {
 
   Future<List<dynamic>> fetchPackages() async {
     final response = await http.get(
-        Uri.parse('http://192.168.50.143:3001/api/member/packages'));
+        Uri.parse('http://localhost:3001/api/member/packages'));
     if (response.statusCode == 200) {
       return json.decode(response.body);
     } else {
@@ -18,7 +18,7 @@ class UserServiceApi {
       String height, String weight, String bloodGroup, String email,
       String password, String packageId) async {
     var client = http.Client();
-    var apiUrl = Uri.parse("http://192.168.50.143:3001/api/member/addmember");
+    var apiUrl = Uri.parse("http://localhost:3001/api/member/addmember");
     var response = await client.post(apiUrl,
         headers: <String, String>{
           "Content-Type": "application/json; charset=UTF-8"

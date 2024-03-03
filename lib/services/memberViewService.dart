@@ -6,7 +6,7 @@ class MemberViewApiService
   Future<List<Viewws >> getViews() async
   {
     var client = http.Client();
-    var apiUri = Uri.parse("http://10.0.16.12:3001/api/member/view_all");
+    var apiUri = Uri.parse("http://localhost:3001/api/member/viewDue");
     var response = await client.get(apiUri);
     if(response.statusCode == 200)
     {

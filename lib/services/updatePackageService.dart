@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 class updatePackageApiService {
 
   Future<List<dynamic>> fetchPackages() async {
-    final response = await http.get(Uri.parse('http://192.168.50.143:3001/api/member/packages'));
+    final response = await http.get(Uri.parse('http://localhost:3001/api/member/packages'));
     if (response.statusCode == 200) {
       return json.decode(response.body);
     } else {
@@ -15,7 +15,7 @@ class updatePackageApiService {
   Future<dynamic> UpdatePackageData(String email,String packagename) async
   {
     var client = http.Client();
-    var apiUri = Uri.parse("http://192.168.50.143:3001/api/package/updatepackage");
+    var apiUri = Uri.parse("http://localhost:3001/api/package/updatepackage");
     var response = await client.post(apiUri,
       headers: <String, String>
       {

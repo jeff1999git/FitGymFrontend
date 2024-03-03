@@ -22,7 +22,7 @@ class _AddPackageState extends State<AddPackage> {
     packageAmount=controller_3.text;
     final response = await PackageApiService().AddPackageData(packageName,packageDes,packageAmount);
     print(response["status"]);
-    if(response["status"]=="success")
+    if(response["status"]=="successs")
     {
       showSimplePopup1(context, "New Package Added!");
     }
