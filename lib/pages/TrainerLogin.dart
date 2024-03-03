@@ -50,7 +50,7 @@ class _TrainerLoginState extends State<TrainerLogin> {
                 TextField(
                   controller: username,
                   decoration: InputDecoration(labelText: "ENTER USERNAME",hintText:"USERNAME",
-                  border: OutlineInputBorder()),
+                      border: OutlineInputBorder()),
                 ),
                 SizedBox(height: 30,),
                 TextField(
@@ -60,13 +60,13 @@ class _TrainerLoginState extends State<TrainerLogin> {
                 ),
                 SizedBox(height: 30,),
                 SizedBox(child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueGrey,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4)
-                    )
-                  ),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueGrey,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4)
+                        )
+                    ),
                     onPressed: login, child: Text("LOGIN")))
               ],
             ),
