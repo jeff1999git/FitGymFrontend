@@ -29,7 +29,7 @@ class _menuPageState extends State<menuPage> {
             onPressed: (){
           Navigator.pop(context);
         }, icon: Icon(Icons.arrow_back)),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.black,
       ),
         body:pages[currentIndex],
         bottomNavigationBar: BottomNavigationBar(

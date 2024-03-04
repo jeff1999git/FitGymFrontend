@@ -21,21 +21,18 @@ class _viewMemberState extends State<viewMember> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.black,
           leading: IconButton(style: IconButton.styleFrom(
-              foregroundColor: Colors.black
+              foregroundColor: Colors.white
           ),
               onPressed: (){
                 Navigator.pop(context);
               }, icon: Icon(Icons.arrow_back)),
-          title: Text("Members",style: TextStyle(color: Colors.black),),
+          title: Text("Members",style: TextStyle(color: Colors.white),),
         ),
       body: Container(
         height: 1000,
         width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [Colors.black38, Colors.white, Colors.black38]),
-        ),
         padding: EdgeInsets.all(20),
         child: FutureBuilder(future: data, builder: (context,snapshot)
         {

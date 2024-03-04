@@ -37,7 +37,7 @@ class _addTrainerState extends State<addTrainer> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.black,
           title: Text("Add Trainer",style: TextStyle(color: Colors.white),),
         ),
         body: ListView(
@@ -78,7 +78,7 @@ class _addTrainerState extends State<addTrainer> {
             SizedBox(height: 50,
               width: 200,
               child: ElevatedButton(style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)
@@ -91,7 +91,7 @@ class _addTrainerState extends State<addTrainer> {
             SizedBox(height: 50,
               width: 200,
               child: ElevatedButton(style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)

@@ -54,14 +54,11 @@ class _ChangePackageState extends State<ChangePackage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("UPDATE PACKAGE", style: TextStyle(color: Colors.black)),
+        title: Text("UPDATE PACKAGE", style: TextStyle(color: Colors.white)),backgroundColor: Colors.black,
       ),
       body: Container(
         height: 1000,
         width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [Colors.black38, Colors.white, Colors.black38]),
-        ),
         padding: EdgeInsets.all(50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -108,11 +105,19 @@ class _ChangePackageState extends State<ChangePackage> {
             ),
             SizedBox(height: 10),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white
+              ),
               onPressed: UpdatepackageUserApi,
               child: Text("UPDATE"),
             ),
             SizedBox(height: 10),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white
+              ),
               onPressed: () {
                 Navigator.pop(context);
               },

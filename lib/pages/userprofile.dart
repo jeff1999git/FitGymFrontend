@@ -42,6 +42,14 @@ class _UserProfileState extends State<UserProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(style: IconButton.styleFrom(
+            foregroundColor: Colors.white
+        ),
+            onPressed: (){
+              Navigator.pop(context);
+            }, icon: Icon(Icons.arrow_back)) ,
+        title: Text("MY INFO",style: TextStyle(color: Colors.white),),backgroundColor: Colors.black,),
       body: Container(
         padding: EdgeInsets.all(15),
         width: double.infinity,
@@ -53,6 +61,9 @@ class _UserProfileState extends State<UserProfile> {
                 itemBuilder:(context,index){
                   return Card(
                     child: ListTile(
+                      leading: CircleAvatar(
+                        child: Text(searchResult[index]['name'][0]),
+                      ),
                       title: Text("Name: ${searchResult[index]['name']}"),
                       subtitle: Text("Place: ${searchResult[index]['place']}"+"\nAge: ${searchResult[index]['age']}"+"\nHeight: ${searchResult[index]['height']}"+"\nWeight: ${searchResult[index]['weight']}"
                           +"\nBloodgroup: ${searchResult[index]['bloodGroup']}"+"\nEmail: ${searchResult[index]['email']}"+"\nRegisterdate: ${searchResult[index]['registerDate']}"+"\npackagename: ${searchResult[index]['package_name']}"+"\nPackage Amount: ${searchResult[index]['package_amount']}"+"\nDue Amount: ${searchResult[index]['dueAmount']}"),

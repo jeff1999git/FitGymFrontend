@@ -24,7 +24,7 @@ class _memberMenuState extends State<memberMenu> {
             SizedBox(height: 50,
               width: 200,
               child: ElevatedButton(style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)
@@ -38,7 +38,7 @@ class _memberMenuState extends State<memberMenu> {
             SizedBox(height: 50,
               width: 200,
               child: ElevatedButton(style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)
@@ -52,7 +52,7 @@ class _memberMenuState extends State<memberMenu> {
             SizedBox(height: 50,
               width: 200,
               child: ElevatedButton(style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)
@@ -67,7 +67,7 @@ class _memberMenuState extends State<memberMenu> {
               width: 200,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Colors.black,
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)

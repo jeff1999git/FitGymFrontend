@@ -35,15 +35,12 @@ class _AddPackageState extends State<AddPackage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ADD PACKAGE", style: TextStyle(color: Colors.black)),
+        title: Text("ADD PACKAGE", style: TextStyle(color: Colors.white)),backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
         child: Container(
           height: 800,
           width: double.infinity,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [Colors.black38, Colors.white, Colors.black38]),
-          ),
           padding: EdgeInsets.all(50),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -78,13 +75,13 @@ class _AddPackageState extends State<AddPackage> {
           SizedBox(height: 50,
           width: 700),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.black12,foregroundColor: Colors.white),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.black,foregroundColor: Colors.white),
             onPressed: AddPackageApi,
             child: Text("ADD"),
           ),
           SizedBox(height: 10),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.black12,foregroundColor: Colors.white),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.black,foregroundColor: Colors.white),
             onPressed: () {
               Navigator.pop(context);
             },

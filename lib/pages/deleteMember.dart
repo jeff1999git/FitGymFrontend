@@ -37,21 +37,18 @@ class _deleteMemberState extends State<deleteMember> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.black,
           leading: IconButton(style: IconButton.styleFrom(
-              foregroundColor: Colors.black
+              foregroundColor: Colors.white
           ),
               onPressed: (){
                 Navigator.pop(context);
               }, icon: Icon(Icons.arrow_back)),
-          title: Text("Delete Members",style: TextStyle(color: Colors.black),),
+          title: Text("Delete Members",style: TextStyle(color: Colors.white),),
         ),
         body: Container(
           height: 1000,
           width: double.infinity,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [Colors.black38, Colors.white, Colors.black38]),
-          ),
           padding: EdgeInsets.all(20),
           child: FutureBuilder(future: data, builder: (context,snapshot)
           {
@@ -80,7 +77,7 @@ class _deleteMemberState extends State<deleteMember> {
                                 child: Text(snapshot.data![index].name[0]),
                               ),
                               trailing: ElevatedButton(style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.black12,
+                                  backgroundColor: Colors.black,
                                   foregroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20)

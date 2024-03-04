@@ -24,7 +24,7 @@ class _viewTrainerState extends State<viewTrainer> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.black,
           leading: IconButton(style: IconButton.styleFrom(
               foregroundColor: Colors.white
           ),
@@ -40,13 +40,12 @@ class _viewTrainerState extends State<viewTrainer> {
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context,index){
                   return Card(
-                    color: Colors.lightBlue.shade100,
                     child: Column(
                       children: [
                         ListTile(
                           leading: CircleAvatar(
                             child: Text(snapshot.data![index].name[0]),
-                            backgroundColor: Colors.lightBlue.shade300,
+                            backgroundColor: Colors.grey,
                           ),
                           title: Text("Name : "+snapshot.data![index].name.toString()),
                           subtitle: Text("Age : "+snapshot.data![index].age.toString()+
