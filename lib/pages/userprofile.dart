@@ -12,7 +12,7 @@ class UserProfile extends StatefulWidget {
 }
 
 class _UserProfileState extends State<UserProfile> {
-  List<Map<String, dynamic>> searchResult = [];
+  Map<String, dynamic> searchResult={};
 
   @override
   void initState() {
@@ -23,13 +23,15 @@ class _UserProfileState extends State<UserProfile> {
   Future<void> loadData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String userEmail = prefs.getString("email") ?? "";
+    String userTok = prefs.getString("token") ?? "";
     print(userEmail);
+    print("Token is:"+userTok);
     // Corrected assumption: UserServiceApi().searchData() returns a Future that resolves to a list of user data
     try {
-      final response = await UserServiceApi().searchData(userEmail);
+      final response = await UserServiceApi().searchData(userEmail, userTok);
       if (response != null && mounted) {
         setState(() {
-          searchResult = List<Map<String, dynamic>>.from(response);
+          searchResult = Map<String, dynamic>.from(response);
         });
       }
     } catch (e) {
@@ -49,13 +51,13 @@ class _UserProfileState extends State<UserProfile> {
           children: [
             SizedBox(height: 20,),
             Expanded(child: ListView.builder(
-                itemCount: searchResult.length,
+                itemCount: 1,
                 itemBuilder:(context,index){
                   return Card(
                     child: ListTile(
-                      title: Text("Name: ${searchResult[index]['name']}"),
-                      subtitle: Text("Place: ${searchResult[index]['place']}"+"\nAge: ${searchResult[index]['age']}"+"\nHeight: ${searchResult[index]['height']}"+"\nWeight: ${searchResult[index]['weight']}"
-                          +"\nBloodgroup: ${searchResult[index]['bloodGroup']}"+"\nEmail: ${searchResult[index]['email']}"+"\nRegisterdate: ${searchResult[index]['registerDate']}"+"\npackagename: ${searchResult[index]['package_name']}"+"\nPackage Amount: ${searchResult[index]['package_amount']}"+"\nDue Amount: ${searchResult[index]['dueAmount']}"),
+                      title: Text("Name: ${searchResult['name']}"),
+                      subtitle: Text("Place: ${searchResult['place']}"+"\nAge: ${searchResult['age']}"+"\nHeight: ${searchResult['height']}"+"\nWeight: ${searchResult['weight']}"
+                          +"\nBloodgroup: ${searchResult['bloodGroup']}"+"\nEmail: ${searchResult['email']}"+"\nRegisterdate: ${searchResult['registerDate']}"+"\npackagename: ${searchResult['package_name']}"+"\nPackage Amount: ${searchResult['package_amount']}"+"\nDue Amount: ${searchResult['dueAmount']}"),
                     ),
                   );
                 } ))

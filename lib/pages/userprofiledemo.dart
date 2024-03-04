@@ -24,18 +24,19 @@ class _UserProfile1State extends State<UserProfile1> {
   Future<void> loadData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? userEmail = prefs.getString("email");
+    String? userTok = prefs.getString("token");
     print(userEmail);
 
     // Retrieve user ID using the email
     try {
-      final response = await UserServiceApi().searchData(userEmail!);
+      final response = await UserServiceApi().searchData(userEmail!, userTok!);
       if (response != null) {
         setState(() {
           userId = response;
           print(userId);// Set the userId obtained from the email
         });
         // Now perform the search using the retrieved userId
-        final userData = await UserServiceApi().searchData(userId!);
+        final userData = await UserServiceApi().searchData(userEmail!, userTok!);
         if (userData != null && mounted) {
           setState(() {
             searchResult = List<Map<String, dynamic>>.from(userData);

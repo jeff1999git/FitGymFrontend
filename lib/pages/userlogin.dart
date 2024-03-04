@@ -15,6 +15,8 @@ class _MemberLoginState extends State<MemberLogin> {
   final TextEditingController password=new TextEditingController();
 
   @override
+
+
   void checkCredentials() async
   {
     final response=await UserServiceApi().signInData(username.text, password.text);
@@ -22,8 +24,11 @@ class _MemberLoginState extends State<MemberLogin> {
     {
       SharedPreferences.setMockInitialValues({});
       String userName=response["userdata"]["email"].toString();
+      String userTok=response["token"].toString();
       SharedPreferences prefer=await SharedPreferences.getInstance();
       prefer.setString("email", userName);
+      prefer.setString("token", userTok);
+      print(userTok);
       print("Successful Login");
       Navigator.push(context, MaterialPageRoute(
           builder: (context)=>MemPage()
