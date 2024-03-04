@@ -39,7 +39,19 @@ class TrainerPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5)
                       )
                     ),
-                      onPressed: (){}, child: Text("MARK ATTENDENCE")))
+                      onPressed: (){}, child: Text("MARK ATTENDENCE"))),
+                  SizedBox(height: 30,),
+                  SizedBox(child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blueGrey,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5)
+                          )
+                      ),
+                      onPressed: (){
+                        Navigator.pop(context);
+                      }, child: Text("BACK")))
                 ],
               ),
             ),
