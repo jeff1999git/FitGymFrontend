@@ -24,7 +24,7 @@ class TrainerApiService{
     }
   }
 
-  Future<dynamic> signInData(String email, String password) async {
+  Future<dynamic> signInData(String emailid, String password) async {
 
     var client = http.Client();
     var apiUrl = Uri.parse("http://localhost:3001/api/trainer/signintrainer");
@@ -33,7 +33,7 @@ class TrainerApiService{
           "Content-Type": "application/json; charset=UTF-8"
         },
         body: jsonEncode(<String, String>{
-          "email": email,
+          "emailid": emailid,
           "password": password
         })
     );

@@ -67,7 +67,17 @@ class _TrainerLoginState extends State<TrainerLogin> {
                       borderRadius: BorderRadius.circular(4)
                     )
                   ),
-                    onPressed: login, child: Text("LOGIN")))
+                    onPressed: login, child: Text("LOGIN"))),
+                SizedBox(height: 10,),
+                SizedBox(child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueGrey,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4)
+                        )
+                    ),
+                    onPressed:(){Navigator.pop(context);}, child: Text("BACK")))
               ],
             ),
           ),

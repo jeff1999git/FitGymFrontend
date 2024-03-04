@@ -87,7 +87,11 @@ class _MemberLoginState extends State<MemberLogin> {
                 ),
               ),
               SizedBox(height: 10,),
-              ElevatedButton(onPressed: checkCredentials, child: Text("LOGIN"))
+              ElevatedButton(onPressed: checkCredentials, child: Text("LOGIN")),
+              SizedBox(height: 10,),
+              ElevatedButton(onPressed: (){
+                Navigator.pop(context);
+              }, child: Text("BACK"))
             ],
           ),
         ),
