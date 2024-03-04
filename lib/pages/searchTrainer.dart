@@ -35,7 +35,7 @@ class _searchTrainerState extends State<searchTrainer> {
               onPressed: (){
                 Navigator.pop(context);
               }, icon: Icon(Icons.arrow_back)),
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.black,
           title: Text("Search Trainer",style: TextStyle(color: Colors.white),),
         ),
         body: Container(
@@ -55,7 +55,7 @@ class _searchTrainerState extends State<searchTrainer> {
             SizedBox(height: 50,
               width: 200,
               child: ElevatedButton(style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)

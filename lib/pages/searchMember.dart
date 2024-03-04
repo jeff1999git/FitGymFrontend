@@ -50,7 +50,7 @@ class _searchMemberState extends State<searchMember> {
               onPressed: (){
                 Navigator.pop(context);
               }, icon: Icon(Icons.arrow_back)),
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.black,
           title: Text("Search Member",style: TextStyle(color: Colors.white),),
         ),
         body: ListView(
@@ -67,7 +67,7 @@ class _searchMemberState extends State<searchMember> {
             SizedBox(height: 50,
                 width: 200,
                 child: ElevatedButton(style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Colors.black,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)

@@ -72,15 +72,12 @@ class _AddMemberState extends State<AddMember> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Add Member",style: TextStyle(color: Colors.black),),
+          title: Text("Add Member",style: TextStyle(color: Colors.white),),backgroundColor: Colors.black,
         ),
         body: SingleChildScrollView(
           child: Container(
     height: 1000,
     width: double.infinity,
-    decoration: BoxDecoration(
-    gradient: LinearGradient(colors: [Colors.black38, Colors.white, Colors.black38]),
-    ),
     padding: EdgeInsets.all(50),
           child: Column(
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -184,7 +181,7 @@ class _AddMemberState extends State<AddMember> {
             SizedBox(height: 50,
               width: 200,
               child: ElevatedButton(style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black12,
+                  backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)
@@ -196,7 +193,7 @@ class _AddMemberState extends State<AddMember> {
             SizedBox(height: 50,
               width: 200,
               child: ElevatedButton(style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black12,
+                  backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)

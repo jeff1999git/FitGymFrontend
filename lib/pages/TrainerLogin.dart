@@ -36,7 +36,7 @@ class _TrainerLoginState extends State<TrainerLogin> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(title: Text("TRAINER",style: TextStyle(color: Colors.white),),backgroundColor: Colors.black,),
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.all(50),
@@ -61,7 +61,7 @@ class _TrainerLoginState extends State<TrainerLogin> {
                 SizedBox(height: 30,),
                 SizedBox(child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueGrey,
+                    backgroundColor: Colors.black,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4)
@@ -71,7 +71,7 @@ class _TrainerLoginState extends State<TrainerLogin> {
                 SizedBox(height: 10,),
                 SizedBox(child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueGrey,
+                        backgroundColor: Colors.black,
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4)

@@ -1,4 +1,5 @@
 import 'package:fitgym/pages/userMenu.dart';
+import 'package:fitgym/pages/userprofile.dart';
 import 'package:fitgym/services/userService.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -26,7 +27,7 @@ class _MemberLoginState extends State<MemberLogin> {
       prefer.setString("email", userName);
       print("Successful Login");
       Navigator.push(context, MaterialPageRoute(
-          builder: (context)=>MemPage()
+          builder: (context)=>UserProfile()
       ));
     }
     else if(response["status"]=="incorrect email id")
@@ -49,19 +50,17 @@ class _MemberLoginState extends State<MemberLogin> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("USER LOGIN",style: TextStyle(color: Colors.black),),
+          leading: IconButton(style: IconButton.styleFrom(
+              foregroundColor: Colors.white
+          ),
+              onPressed: (){
+                Navigator.pop(context);
+              }, icon: Icon(Icons.arrow_back)) ,
+          title: Text("USER LOGIN",style: TextStyle(color: Colors.white),),
+          backgroundColor: Colors.black,
         ),
         body: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [
-                    Colors.black38,
-                    Colors.white,
-                    Colors.black38
-                  ]
-              )
-          ),
           padding: EdgeInsets.all(20),
           child: Column(
             children: [
@@ -87,11 +86,13 @@ class _MemberLoginState extends State<MemberLogin> {
                 ),
               ),
               SizedBox(height: 10,),
-              ElevatedButton(onPressed: checkCredentials, child: Text("LOGIN")),
-              SizedBox(height: 10,),
-              ElevatedButton(onPressed: (){
-                Navigator.pop(context);
-              }, child: Text("BACK"))
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    foregroundColor: Colors.white
+                  ),
+                  onPressed: checkCredentials, child: Text("LOGIN")),
+
             ],
           ),
         ),

@@ -17,14 +17,14 @@ class _adminPageState extends State<adminPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
+        appBar: AppBar(title: Text("Admin",style: TextStyle(color: Colors.white),),
           leading: IconButton(style: IconButton.styleFrom(
             foregroundColor: Colors.white
           ),
               onPressed: (){
             Navigator.pop(context);
           }, icon: Icon(Icons.arrow_back)) ,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.black,
         ),
         body:
         ListView(
@@ -48,7 +48,7 @@ class _adminPageState extends State<adminPage> {
             ),
             SizedBox(height: 10,),
             ElevatedButton(style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue,
+              backgroundColor: Colors.black,
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20)
