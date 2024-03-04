@@ -51,7 +51,7 @@ class TrainerPage extends StatelessWidget {
                       ),
                       onPressed: (){
                         Navigator.pop(context);
-                      }, child: Text("BACK")))
+                      }, child: Text("BACKK")))
                 ],
               ),
             ),
