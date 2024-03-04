@@ -9,6 +9,7 @@ List<Viewws> viewwsFromJson(String str) => List<Viewws>.from(json.decode(str).ma
 String viewwsToJson(List<Viewws> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Viewws {
+  String id;
   String name;
   String email;
   String packageName;
@@ -16,6 +17,7 @@ class Viewws {
   int remainingDaysForNextDue;
 
   Viewws({
+    required this.id,
     required this.name,
     required this.email,
     required this.packageName,
@@ -24,6 +26,7 @@ class Viewws {
   });
 
   factory Viewws.fromJson(Map<String, dynamic> json) => Viewws(
+    id: json["id"],
     name: json["name"],
     email: json["email"],
     packageName: json["package_name"],
@@ -32,6 +35,7 @@ class Viewws {
   );
 
   Map<String, dynamic> toJson() => {
+    "id": id,
     "name": name,
     "email": email,
     "package_name": packageName,
