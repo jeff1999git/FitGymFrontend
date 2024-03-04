@@ -36,7 +36,15 @@ class _TrainerLoginState extends State<TrainerLogin> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("TRAINER",style: TextStyle(color: Colors.white),),backgroundColor: Colors.black,),
+        appBar: AppBar(
+          leading: IconButton(style: IconButton.styleFrom(
+              foregroundColor: Colors.white
+          ),
+              onPressed: (){
+                Navigator.pop(context);
+              }, icon: Icon(Icons.arrow_back)) ,
+          title: Text("TRAINER",style: TextStyle(color: Colors.white),),backgroundColor: Colors.black,),
+
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.all(50),
@@ -68,16 +76,6 @@ class _TrainerLoginState extends State<TrainerLogin> {
                     )
                   ),
                     onPressed: login, child: Text("LOGIN"))),
-                SizedBox(height: 10,),
-                SizedBox(child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4)
-                        )
-                    ),
-                    onPressed:(){Navigator.pop(context);}, child: Text("BACK")))
               ],
             ),
           ),
