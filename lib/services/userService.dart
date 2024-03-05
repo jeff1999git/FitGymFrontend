@@ -64,7 +64,7 @@ class UserServiceApi {
 
   Future<dynamic> searchData(String email, String token) async {
     var client = http.Client();
-    var apiUrl = Uri.parse("http://192.168.1.5:3001/api/member/viewmemberprofile");
+    var apiUrl = Uri.parse("http://localhost:3001/api/member/viewmemberprofile");
 
     var response = await client.post(apiUrl,
         headers: <String, String>{
@@ -88,7 +88,7 @@ class UserServiceApi {
 
   Future<dynamic> signInData(String email, String password) async {
     var client = http.Client();
-    var apiUrl = Uri.parse("http://192.168.1.5:3001/api/member/signin");
+    var apiUrl = Uri.parse("http://localhost:3001/api/member/signin");
     var response = await client.post(apiUrl,
         headers: <String, String>{
           "Content-Type": "application/json; charset=UTF-8"
