@@ -9,6 +9,7 @@ List<Users> usersFromJson(String str) => List<Users>.from(json.decode(str).map((
 String usersToJson(List<Users> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Users {
+  String id;
   String name;
   String place;
   String age;
@@ -23,6 +24,7 @@ class Users {
   DateTime lastPackageUpdateDate;
 
   Users({
+    required this.id,
     required this.name,
     required this.place,
     required this.age,
@@ -38,6 +40,7 @@ class Users {
   });
 
   factory Users.fromJson(Map<String, dynamic> json) => Users(
+    id: json["_id"],
     name: json["name"],
     place: json["place"],
     age: json["age"],
@@ -53,6 +56,7 @@ class Users {
   );
 
   Map<String, dynamic> toJson() => {
+    "_id": id,
     "name": name,
     "place": place,
     "age": age,
