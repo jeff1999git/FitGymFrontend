@@ -63,27 +63,56 @@ class UserServiceApi {
   }
 
 
-  Future<dynamic> searchData(String email) async
-  {
-    var client = http.Client();
-    var apiUrl = Uri.parse(
-        "http://localhost:3001/api/member/viewmemberdetails");
+  // Future<dynamic> searchData(String email, String token) async
+  // {
+  //   var client = http.Client();
+  //   var apiUrl = Uri.parse(
+  //       "http://localhost:3001/api/member/viewmemberdetails");
+  //
+  //   var response = await client.post(apiUrl,
+  //       headers: <String, String>{
+  //         "Content-Type": "application/json","token":token
+  //       },
+  //       body: jsonEncode(<String, String>{
+  //         "email": email,
+  //         "token":token
+  //       })
+  //   );
+  //   if (response.statusCode == 200) {
+  //     return json.decode(response.body);
+  //   }
+  //   else {
+  //     throw Exception("failed to search");
+  //   }
+  // }
 
-    var response = await client.post(apiUrl,
+  Future<dynamic> searchData(String userid, String token) async {
+    var client = http.Client();
+    var apiUrl = Uri.parse("http://localhost:3001/api/member/viewmemberdetails");
+
+    try {
+      var response = await client.post(
+        apiUrl,
         headers: <String, String>{
-          "Content-Type": "application/json; charset=UTF-8"
+          "Content-Type": "application/json",
+          "token": token, // Authentication token usually goes in the headers
         },
         body: jsonEncode(<String, String>{
-          "email": email,
-        })
-    );
-    if (response.statusCode == 200) {
-      return json.decode(response.body);
-    }
-    else {
-      throw Exception("failed to search");
+          "_id": userid,
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        return json.decode(response.body);
+      } else {
+        // Improved error message for debugging
+        throw Exception('Failed to search. Status code: ${response.statusCode}. Response body: ${response.body}');
+      }
+    } finally {
+      client.close();
     }
   }
+
 
   Future<dynamic> signInData(String email, String password) async {
     var client = http.Client();

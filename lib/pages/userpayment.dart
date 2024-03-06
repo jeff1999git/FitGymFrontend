@@ -24,10 +24,11 @@ class _UserPaymentState extends State<UserPayment> {
   Future<void> loadData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String userEmail = prefs.getString("email") ?? "";
+    String userTok = prefs.getString("token") ?? "";
     print(userEmail);
     // Corrected assumption: UserServiceApi().searchData() returns a Future that resolves to a list of user data
     try {
-      final response = await UserServiceApi().searchData(userEmail);
+      final response = await UserServiceApi().searchData(userEmail,userTok);
       if (response != null && mounted) {
         setState(() {
           searchResult = List<Map<String, dynamic>>.from(response);
