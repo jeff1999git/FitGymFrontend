@@ -27,7 +27,7 @@ class _MemberLoginState extends State<MemberLogin> {
       prefer.setString("email", userName);
       print("Successful Login");
       Navigator.push(context, MaterialPageRoute(
-          builder: (context)=>UserProfile()
+          builder: (context)=>MemPage()
       ));
     }
     else if(response["status"]=="incorrect email id")

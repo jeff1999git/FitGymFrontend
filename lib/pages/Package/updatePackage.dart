@@ -1,5 +1,6 @@
 import 'package:fitgym/pages/Package/addPackage.dart';
 import 'package:fitgym/pages/Package/changePackage.dart';
+import 'package:fitgym/pages/userpackage.dart';
 import 'package:flutter/material.dart';
 
 class updatePackage extends StatefulWidget {
@@ -46,6 +47,19 @@ class _updatePackageState extends State<updatePackage> {
                   }, child: Text("Update Package")),
             ),
             SizedBox(height: 10,),
+            SizedBox(height: 50,
+              width: 200,
+              child: ElevatedButton(style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)
+                  )
+              ),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>UserPackage()));
+                  }, child: Text("View all Packages")),
+            ),
           ],
         ),
     );
