@@ -6,7 +6,7 @@ class UserServiceApi {
 
   Future<List<dynamic>> fetchPackages() async {
     final response = await http.get(
-        Uri.parse('http://localhost:3001/api/member/packages'));
+        Uri.parse('http://192.168.1.5:3001/api/member/packages'));
     if (response.statusCode == 200) {
       return json.decode(response.body);
     } else {

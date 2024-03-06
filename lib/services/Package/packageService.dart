@@ -5,7 +5,7 @@ class PackageApiService {
   Future<dynamic> AddPackageData(String packageName, String packageDes,String packageAmount) async
   {
     var client = http.Client();
-    var apiUri = Uri.parse("http://localhost:3001/api/package/addpackage");
+    var apiUri = Uri.parse("http://192.168.1.5:3001/api/package/addpackage");
     var response = await client.post(apiUri,
       headers: <String, String>
       {
