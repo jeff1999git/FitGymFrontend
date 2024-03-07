@@ -52,10 +52,10 @@ class _PaymentpageState extends State<Paymentpage> {
                             height: 15,
                           ),
                           ListTile(
-                            title: Text("Name: "+snapshot.data![index].p.toString(),style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-                            subtitle: Text("Email: "+snapshot.data![index].email.toString()+ "\n" +"Package Name: "+snapshot.data![index].packageName.toString()+ "\n" +"Due Amount: "+snapshot.data![index].dueAmount.toString()+ "\n" +"Remaining Days For Due: "+snapshot.data![index].remainingDaysForNextDue.toString()),
+                            //title: Text("Name: "+snapshot.data![index].p.toString(),style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                            //subtitle: Text("Email: "+snapshot.data![index].email.toString()+ "\n" +"Package Name: "+snapshot.data![index].packageName.toString()+ "\n" +"Due Amount: "+snapshot.data![index].dueAmount.toString()+ "\n" +"Remaining Days For Due: "+snapshot.data![index].remainingDaysForNextDue.toString()),
                             leading: CircleAvatar(
-                              child: Text(snapshot.data![index].name[0]),
+                             // child: Text(snapshot.data![index].name[0]),
                             ),
                           )
                         ],
